@@ -1,0 +1,847 @@
+[0m17:16:06.987567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5d6f18310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5d6f18610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5d6f18910>]}
+
+
+============================== 17:16:06.993494 | 742751fa-ced2-4b4a-992c-f83df81f1479 ==============================
+[0m17:16:06.993494 [info ] [MainThread]: Running with dbt=1.8.1
+[0m17:16:06.994623 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:07.013681 [info ] [MainThread]: dbt version: 1.8.1
+[0m17:16:07.014904 [info ] [MainThread]: python version: 3.11.5
+[0m17:16:07.016105 [info ] [MainThread]: python path: /home/vipin/Desktop/airflow-workflow-project-inclass/dbt/bin/python3
+[0m17:16:07.017356 [info ] [MainThread]: os info: Linux-5.14.0-362.18.1.el9_3.x86_64-x86_64-with-glibc2.34
+[0m17:16:08.110643 [info ] [MainThread]: Using profiles dir at /home/vipin/.dbt
+[0m17:16:08.111539 [info ] [MainThread]: Using profiles.yml file at /home/vipin/.dbt/profiles.yml
+[0m17:16:08.112147 [info ] [MainThread]: Using dbt_project.yml file at /home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/dbt_project.yml
+[0m17:16:08.112898 [info ] [MainThread]: adapter type: snowflake
+[0m17:16:08.113450 [info ] [MainThread]: adapter version: 1.8.2
+[0m17:16:08.265641 [info ] [MainThread]: Configuration:
+[0m17:16:08.266622 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:16:08.267572 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:16:08.268390 [info ] [MainThread]: Required dependencies:
+[0m17:16:08.269180 [debug] [MainThread]: Executing "git --help"
+[0m17:16:08.272499 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:16:08.273496 [debug] [MainThread]: STDERR: "b''"
+[0m17:16:08.274178 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:16:08.274955 [info ] [MainThread]: Connection:
+[0m17:16:08.275741 [info ] [MainThread]:   account: cbujvcv-uy79203
+[0m17:16:08.276521 [info ] [MainThread]:   user: VIPINTOMAR1205
+[0m17:16:08.277245 [info ] [MainThread]:   database: VIPINTOMAR_DMA
+[0m17:16:08.277955 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m17:16:08.278834 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m17:16:08.279609 [info ] [MainThread]:   schema: PUBLIC
+[0m17:16:08.280378 [info ] [MainThread]:   authenticator: None
+[0m17:16:08.281043 [info ] [MainThread]:   oauth_client_id: None
+[0m17:16:08.281684 [info ] [MainThread]:   query_tag: None
+[0m17:16:08.282375 [info ] [MainThread]:   client_session_keep_alive: False
+[0m17:16:08.283206 [info ] [MainThread]:   host: None
+[0m17:16:08.283954 [info ] [MainThread]:   port: None
+[0m17:16:08.284742 [info ] [MainThread]:   proxy_host: None
+[0m17:16:08.285574 [info ] [MainThread]:   proxy_port: None
+[0m17:16:08.286297 [info ] [MainThread]:   protocol: None
+[0m17:16:08.286959 [info ] [MainThread]:   connect_retries: 1
+[0m17:16:08.287657 [info ] [MainThread]:   connect_timeout: None
+[0m17:16:08.288372 [info ] [MainThread]:   retry_on_database_errors: False
+[0m17:16:08.289247 [info ] [MainThread]:   retry_all: False
+[0m17:16:08.289961 [info ] [MainThread]:   insecure_mode: False
+[0m17:16:08.290768 [info ] [MainThread]:   reuse_connections: None
+[0m17:16:08.291758 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m17:16:08.294898 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m17:16:08.297272 [debug] [MainThread]: Using snowflake connection "debug"
+[0m17:16:08.298914 [debug] [MainThread]: On debug: select 1 as id
+[0m17:16:08.300393 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:16:09.689938 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:16:09.693384 [debug] [MainThread]: On debug: Close
+[0m17:16:10.022028 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:16:10.023184 [info ] [MainThread]: [32mAll checks passed![0m
+[0m17:16:10.025105 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.1457875, "process_user_time": 3.65106, "process_kernel_time": 1.156991, "process_mem_max_rss": "205592", "process_out_blocks": "32", "process_in_blocks": "0"}
+[0m17:16:10.026521 [debug] [MainThread]: Command `dbt debug` succeeded at 17:16:10.026262 after 3.15 seconds
+[0m17:16:10.027679 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:16:10.028868 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5da91ae90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5da861290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5ba15d690>]}
+[0m17:16:10.030158 [debug] [MainThread]: Flushing usage events
+[0m17:55:21.275236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e3cf1290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e3cfa990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e3cf2e10>]}
+
+
+============================== 17:55:21.279640 | 51ab9ff1-1770-413e-b1cb-2eaca7b1869f ==============================
+[0m17:55:21.279640 [info ] [MainThread]: Running with dbt=1.8.1
+[0m17:55:21.281018 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'profiles_dir': '/home/vipin/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:55:22.650901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26c24db9d0>]}
+[0m17:55:22.763422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e43752d0>]}
+[0m17:55:22.765288 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m17:55:22.785600 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m17:55:22.787384 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:55:22.788737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e3d20f90>]}
+[0m17:55:25.071639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26c8afb150>]}
+[0m17:55:25.251678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26c2254510>]}
+[0m17:55:25.253165 [info ] [MainThread]: Found 2 models, 4 data tests, 444 macros
+[0m17:55:25.254713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26c2248250>]}
+[0m17:55:25.259737 [info ] [MainThread]: 
+[0m17:55:25.261681 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:55:25.271878 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_VIPINTOMAR_DMA'
+[0m17:55:25.305727 [debug] [ThreadPool]: Using snowflake connection "list_VIPINTOMAR_DMA"
+[0m17:55:25.307004 [debug] [ThreadPool]: On list_VIPINTOMAR_DMA: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "connection_name": "list_VIPINTOMAR_DMA"} */
+show terse schemas in database VIPINTOMAR_DMA
+    limit 10000
+[0m17:55:25.308483 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:55:26.855955 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 2.0 seconds
+[0m17:55:26.859828 [debug] [ThreadPool]: On list_VIPINTOMAR_DMA: Close
+[0m17:55:27.246860 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_VIPINTOMAR_DMA_PUBLIC'
+[0m17:55:27.259240 [debug] [ThreadPool]: Using snowflake connection "list_VIPINTOMAR_DMA_PUBLIC"
+[0m17:55:27.259902 [debug] [ThreadPool]: On list_VIPINTOMAR_DMA_PUBLIC: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "connection_name": "list_VIPINTOMAR_DMA_PUBLIC"} */
+show objects in VIPINTOMAR_DMA.PUBLIC limit 10000
+[0m17:55:27.260478 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:55:28.331181 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.0 seconds
+[0m17:55:28.334136 [debug] [ThreadPool]: On list_VIPINTOMAR_DMA_PUBLIC: Close
+[0m17:55:28.668582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26c226acd0>]}
+[0m17:55:28.669746 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:55:28.670500 [info ] [MainThread]: 
+[0m17:55:28.673958 [debug] [Thread-1 (]: Began running node model.elt_vipin.my_first_dbt_model
+[0m17:55:28.675343 [info ] [Thread-1 (]: 1 of 2 START sql table model PUBLIC.my_first_dbt_model ......................... [RUN]
+[0m17:55:28.676679 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_VIPINTOMAR_DMA_PUBLIC, now model.elt_vipin.my_first_dbt_model)
+[0m17:55:28.677704 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.my_first_dbt_model
+[0m17:55:28.691146 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.my_first_dbt_model"
+[0m17:55:28.692742 [debug] [Thread-1 (]: Began executing node model.elt_vipin.my_first_dbt_model
+[0m17:55:28.755863 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.my_first_dbt_model"
+[0m17:55:28.757624 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.my_first_dbt_model"
+[0m17:55:28.758435 [debug] [Thread-1 (]: On model.elt_vipin.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.my_first_dbt_model"} */
+create or replace transient table VIPINTOMAR_DMA.PUBLIC.my_first_dbt_model
+         as
+        (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+        );
+[0m17:55:28.759154 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:55:30.846113 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:55:30.906496 [debug] [Thread-1 (]: On model.elt_vipin.my_first_dbt_model: Close
+[0m17:55:31.584566 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e75a11d0>]}
+[0m17:55:31.585808 [info ] [Thread-1 (]: 1 of 2 OK created sql table model PUBLIC.my_first_dbt_model .................... [[32mSUCCESS 1[0m in 2.91s]
+[0m17:55:31.587009 [debug] [Thread-1 (]: Finished running node model.elt_vipin.my_first_dbt_model
+[0m17:55:31.588366 [debug] [Thread-1 (]: Began running node model.elt_vipin.my_second_dbt_model
+[0m17:55:31.589415 [info ] [Thread-1 (]: 2 of 2 START sql view model PUBLIC.my_second_dbt_model ......................... [RUN]
+[0m17:55:31.590326 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.elt_vipin.my_first_dbt_model, now model.elt_vipin.my_second_dbt_model)
+[0m17:55:31.591058 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.my_second_dbt_model
+[0m17:55:31.597025 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.my_second_dbt_model"
+[0m17:55:31.598758 [debug] [Thread-1 (]: Began executing node model.elt_vipin.my_second_dbt_model
+[0m17:55:31.664275 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.my_second_dbt_model"
+[0m17:55:31.665739 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.my_second_dbt_model"
+[0m17:55:31.666620 [debug] [Thread-1 (]: On model.elt_vipin.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.my_second_dbt_model"} */
+create or replace   view VIPINTOMAR_DMA.PUBLIC.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from VIPINTOMAR_DMA.PUBLIC.my_first_dbt_model
+where id = 1
+  );
+[0m17:55:31.667383 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:55:33.493294 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:55:33.498444 [debug] [Thread-1 (]: On model.elt_vipin.my_second_dbt_model: Close
+[0m17:55:33.863149 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '51ab9ff1-1770-413e-b1cb-2eaca7b1869f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e5c08f10>]}
+[0m17:55:33.865035 [info ] [Thread-1 (]: 2 of 2 OK created sql view model PUBLIC.my_second_dbt_model .................... [[32mSUCCESS 1[0m in 2.27s]
+[0m17:55:33.866801 [debug] [Thread-1 (]: Finished running node model.elt_vipin.my_second_dbt_model
+[0m17:55:33.869183 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:55:33.870178 [debug] [MainThread]: Connection 'list_VIPINTOMAR_DMA' was properly closed.
+[0m17:55:33.871149 [debug] [MainThread]: Connection 'model.elt_vipin.my_second_dbt_model' was properly closed.
+[0m17:55:33.872344 [info ] [MainThread]: 
+[0m17:55:33.873445 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 8.61 seconds (8.61s).
+[0m17:55:33.875784 [debug] [MainThread]: Command end result
+[0m17:55:33.947735 [info ] [MainThread]: 
+[0m17:55:33.949085 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:55:33.950089 [info ] [MainThread]: 
+[0m17:55:33.951344 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m17:55:33.953993 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.751498, "process_user_time": 6.784913, "process_kernel_time": 1.12816, "process_mem_max_rss": "215008", "process_in_blocks": "128", "process_out_blocks": "2752"}
+[0m17:55:33.955141 [debug] [MainThread]: Command `dbt run` succeeded at 17:55:33.954938 after 12.75 seconds
+[0m17:55:33.955901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e771ae90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e7661290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26e77bd950>]}
+[0m17:55:33.956678 [debug] [MainThread]: Flushing usage events
+[0m18:17:23.589245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64ab50c850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64ab8b8f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64ab8b8ad0>]}
+
+
+============================== 18:17:23.594145 | c62e577c-b239-418e-a2ef-d1521e28ed28 ==============================
+[0m18:17:23.594145 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:17:23.595256 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:17:24.924408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c62e577c-b239-418e-a2ef-d1521e28ed28', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6490352010>]}
+[0m18:17:25.019420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c62e577c-b239-418e-a2ef-d1521e28ed28', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64abb89290>]}
+[0m18:17:25.020709 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:17:25.034647 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:17:25.274812 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading elt_vipin: sources.yml - Runtime Error
+    Syntax error near line 3
+    ------------------------------
+    1  | version:2
+    2  | 
+    3  | sources:
+    4  | 
+    5  |  - name: CLASS_TEST
+    6  |    description: "Class test data"
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 3, column 8
+[0m18:17:25.277150 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.7661718, "process_user_time": 3.762942, "process_kernel_time": 1.080586, "process_mem_max_rss": "202832", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m18:17:25.278836 [debug] [MainThread]: Command `dbt run` failed at 18:17:25.278514 after 1.77 seconds
+[0m18:17:25.280140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64ab54ea10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64ab8b8fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64af016dd0>]}
+[0m18:17:25.281419 [debug] [MainThread]: Flushing usage events
+[0m18:19:11.941129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3c6cbdb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3c6cb7250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3c81b6110>]}
+
+
+============================== 18:19:11.948189 | e5c62961-5106-4a92-baf0-a2a22a641c42 ==============================
+[0m18:19:11.948189 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:19:11.950162 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'profiles_dir': '/home/vipin/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m18:19:13.291831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e5c62961-5106-4a92-baf0-a2a22a641c42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3a94b2410>]}
+[0m18:19:13.400019 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e5c62961-5106-4a92-baf0-a2a22a641c42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3c75351d0>]}
+[0m18:19:13.401273 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:19:13.421032 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:19:13.592008 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:19:13.593497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e5c62961-5106-4a92-baf0-a2a22a641c42', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3c8449f90>]}
+[0m18:19:13.599366 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading elt_vipin: sources.yml - Runtime Error
+    Syntax error near line 3
+    ------------------------------
+    1  | version:2
+    2  | 
+    3  | sources:
+    4  | 
+    5  |  - name: CLASS_TEST
+    6  |    description: "Class test data"
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 3, column 8
+[0m18:19:13.600898 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.7774109, "process_user_time": 3.757726, "process_kernel_time": 1.109337, "process_mem_max_rss": "202888", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m18:19:13.601974 [debug] [MainThread]: Command `dbt run` failed at 18:19:13.601743 after 1.78 seconds
+[0m18:19:13.602765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3c7428810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3ca71ae90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3ca7bd010>]}
+[0m18:19:13.603826 [debug] [MainThread]: Flushing usage events
+[0m18:19:53.758599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba92257990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba92257310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba93727bd0>]}
+
+
+============================== 18:19:53.763503 | fbc847bc-29e5-4c26-bd43-4826224b4656 ==============================
+[0m18:19:53.763503 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:19:53.764677 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:19:55.099634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fbc847bc-29e5-4c26-bd43-4826224b4656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba74a372d0>]}
+[0m18:19:55.203054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fbc847bc-29e5-4c26-bd43-4826224b4656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba928993d0>]}
+[0m18:19:55.204604 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:19:55.226883 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:19:55.422109 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:19:55.422978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fbc847bc-29e5-4c26-bd43-4826224b4656', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba939ae210>]}
+[0m18:19:55.427520 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading elt_vipin: sources.yml - Runtime Error
+    Syntax error near line 3
+    ------------------------------
+    1  | version:2
+    2  | 
+    3  | sources:
+    4  | 
+    5  |  - name: CLASS_TEST
+    6  |    description: "Class test data"
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 3, column 8
+[0m18:19:55.429106 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.7594877, "process_user_time": 3.775895, "process_kernel_time": 1.108596, "process_mem_max_rss": "202872", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m18:19:55.430125 [debug] [MainThread]: Command `dbt run` failed at 18:19:55.429946 after 1.76 seconds
+[0m18:19:55.430823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba95c16dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba9227f790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba92216910>]}
+[0m18:19:55.431464 [debug] [MainThread]: Flushing usage events
+[0m18:21:25.812951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c2b7fda10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c2b7fd910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c2bd11e50>]}
+
+
+============================== 18:21:25.817348 | e95c5323-2ce6-4456-83e2-a4378f3291fe ==============================
+[0m18:21:25.817348 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:21:25.818367 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:21:27.041179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e95c5323-2ce6-4456-83e2-a4378f3291fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c09e8dfd0>]}
+[0m18:21:27.145333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e95c5323-2ce6-4456-83e2-a4378f3291fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c27f0cb90>]}
+[0m18:21:27.146834 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:21:27.163844 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:21:27.356886 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:21:27.357918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e95c5323-2ce6-4456-83e2-a4378f3291fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c2d002110>]}
+[0m18:21:27.362933 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading elt_vipin: sources.yml - Runtime Error
+    Syntax error near line 3
+    ------------------------------
+    1  | version:2
+    2  | 
+    3  | sources:
+    4  | 
+    5  |  - name: class_test
+    6  |    description: "Class test data"
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 3, column 8
+[0m18:21:27.364714 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.6306889, "process_user_time": 3.730016, "process_kernel_time": 1.088966, "process_mem_max_rss": "203048", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m18:21:27.365765 [debug] [MainThread]: Command `dbt run` failed at 18:21:27.365558 after 1.63 seconds
+[0m18:21:27.366559 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c2f31ae90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c27fe1590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1c2f3bd950>]}
+[0m18:21:27.367292 [debug] [MainThread]: Flushing usage events
+[0m18:22:58.614703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd76fc7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd7e207d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd7ca9150>]}
+
+
+============================== 18:22:58.621555 | 22d5725c-5b4e-46cc-a116-1fc43119c036 ==============================
+[0m18:22:58.621555 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:22:58.623209 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m18:22:59.962580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '22d5725c-5b4e-46cc-a116-1fc43119c036', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd8f89350>]}
+[0m18:23:00.108486 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '22d5725c-5b4e-46cc-a116-1fc43119c036', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd7f794d0>]}
+[0m18:23:00.110194 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:23:00.133089 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:23:00.352550 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:23:00.353628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '22d5725c-5b4e-46cc-a116-1fc43119c036', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd8eae310>]}
+[0m18:23:02.758704 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.ORDERS' which was not found
+[0m18:23:02.760373 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.2690244, "process_user_time": 6.289422, "process_kernel_time": 1.077, "process_mem_max_rss": "205972", "process_out_blocks": "8", "command_success": false, "process_in_blocks": "0"}
+[0m18:23:02.761556 [debug] [MainThread]: Command `dbt run` failed at 18:23:02.761337 after 4.27 seconds
+[0m18:23:02.762359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd775f490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bb5ba8910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6bd775f590>]}
+[0m18:23:02.763133 [debug] [MainThread]: Flushing usage events
+[0m18:24:41.309497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb67a48b9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb678f4b890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb678f4bb10>]}
+
+
+============================== 18:24:41.314475 | ae033b65-8429-4c99-b351-fadbf3cfd2d7 ==============================
+[0m18:24:41.314475 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:24:41.315750 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:24:42.634909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ae033b65-8429-4c99-b351-fadbf3cfd2d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb678f3dcd0>]}
+[0m18:24:42.734847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ae033b65-8429-4c99-b351-fadbf3cfd2d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb679585250>]}
+[0m18:24:42.736756 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:24:42.759824 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:24:42.966478 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:24:42.967708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ae033b65-8429-4c99-b351-fadbf3cfd2d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6575a3250>]}
+[0m18:24:45.229708 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.CUSTOMER' which was not found
+[0m18:24:45.231501 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.0134983, "process_user_time": 6.161189, "process_kernel_time": 1.065919, "process_mem_max_rss": "208004", "process_out_blocks": "8", "command_success": false, "process_in_blocks": "0"}
+[0m18:24:45.232890 [debug] [MainThread]: Command `dbt run` failed at 18:24:45.232655 after 4.01 seconds
+[0m18:24:45.233937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6792b90d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6573687d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb678f3c910>]}
+[0m18:24:45.234887 [debug] [MainThread]: Flushing usage events
+[0m18:26:05.925430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd172664810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1720c4250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1720c4590>]}
+
+
+============================== 18:26:05.932608 | 9bd82f94-e322-4bbe-8f8d-f4624b7e7a82 ==============================
+[0m18:26:05.932608 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:26:05.934943 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:26:07.348052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9bd82f94-e322-4bbe-8f8d-f4624b7e7a82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1720fc6d0>]}
+[0m18:26:07.456438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9bd82f94-e322-4bbe-8f8d-f4624b7e7a82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd154779a90>]}
+[0m18:26:07.458858 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:26:07.475931 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:26:07.642342 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:26:07.643773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9bd82f94-e322-4bbe-8f8d-f4624b7e7a82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1738d2250>]}
+[0m18:26:10.154518 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.CLASS_TEST.ORDERS' which was not found
+[0m18:26:10.156336 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.314223, "process_user_time": 6.162977, "process_kernel_time": 0.915392, "process_mem_max_rss": "207972", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m18:26:10.157465 [debug] [MainThread]: Command `dbt run` failed at 18:26:10.157237 after 4.32 seconds
+[0m18:26:10.158305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd175c16dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1720f2310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd172f02c50>]}
+[0m18:26:10.159097 [debug] [MainThread]: Flushing usage events
+[0m18:28:40.892533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99b3f0190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99b3f0fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99b3f0d10>]}
+
+
+============================== 18:28:40.898970 | 4b55d02c-85da-4801-9d09-2887560230b7 ==============================
+[0m18:28:40.898970 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:28:40.900884 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:28:42.188450 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4b55d02c-85da-4801-9d09-2887560230b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99b7a0950>]}
+[0m18:28:42.293070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4b55d02c-85da-4801-9d09-2887560230b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99ba711d0>]}
+[0m18:28:42.294568 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:28:42.316452 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:28:42.508098 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:28:42.509279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4b55d02c-85da-4801-9d09-2887560230b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99cb91fd0>]}
+[0m18:28:44.829924 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.CLASS_TEST.ORDERS' which was not found
+[0m18:28:44.831412 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.0250926, "process_user_time": 6.13959, "process_kernel_time": 1.125332, "process_mem_max_rss": "205888", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m18:28:44.832325 [debug] [MainThread]: Command `dbt run` failed at 18:28:44.832144 after 4.03 seconds
+[0m18:28:44.833029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99ee16e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe99b453c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe9787ab490>]}
+[0m18:28:44.833782 [debug] [MainThread]: Flushing usage events
+[0m18:30:46.993763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3844c00610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3844c3bdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3844c00690>]}
+
+
+============================== 18:30:46.998415 | 49895040-1a95-4406-be8c-861bc62b59f2 ==============================
+[0m18:30:46.998415 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:30:46.999676 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m18:30:48.225720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '49895040-1a95-4406-be8c-861bc62b59f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3844c3d710>]}
+[0m18:30:48.323089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '49895040-1a95-4406-be8c-861bc62b59f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f384527d190>]}
+[0m18:30:48.324594 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:30:48.348933 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:30:48.547558 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:30:48.548583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '49895040-1a95-4406-be8c-861bc62b59f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f384639de90>]}
+[0m18:30:50.840107 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.ORDERS' which was not found
+[0m18:30:50.841855 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 3.9364245, "process_user_time": 6.019626, "process_kernel_time": 1.197396, "process_mem_max_rss": "205920", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m18:30:50.843492 [debug] [MainThread]: Command `dbt run` failed at 18:30:50.843158 after 3.94 seconds
+[0m18:30:50.845430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3844c01cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3848616e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3823050b50>]}
+[0m18:30:50.848259 [debug] [MainThread]: Flushing usage events
+[0m18:31:41.839054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde5a8c690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde5acbd50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde6038d90>]}
+
+
+============================== 18:31:41.848033 | a9455489-b933-44ad-9dd3-522dc23889ce ==============================
+[0m18:31:41.848033 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:31:41.849700 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'profiles_dir': '/home/vipin/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:31:43.227126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a9455489-b933-44ad-9dd3-522dc23889ce', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde5aa5f10>]}
+[0m18:31:43.361258 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a9455489-b933-44ad-9dd3-522dc23889ce', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde63091d0>]}
+[0m18:31:43.363123 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:31:43.386980 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:31:43.573268 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:31:43.574139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a9455489-b933-44ad-9dd3-522dc23889ce', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde723e010>]}
+[0m18:31:45.784190 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.ORDERS' which was not found
+[0m18:31:45.786495 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.029556, "process_user_time": 5.955558, "process_kernel_time": 1.076651, "process_mem_max_rss": "208016", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m18:31:45.788075 [debug] [MainThread]: Command `dbt run` failed at 18:31:45.787778 after 4.03 seconds
+[0m18:31:45.789337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde5fa5bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbde951ad90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbdc2d68ed0>]}
+[0m18:31:45.790604 [debug] [MainThread]: Flushing usage events
+[0m18:32:03.777861 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f194eec8f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f194f470e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f194ef03810>]}
+
+
+============================== 18:32:03.785372 | 81c10de1-2c11-4be6-97f8-645980cb22e3 ==============================
+[0m18:32:03.785372 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:32:03.787175 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:32:05.317396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '81c10de1-2c11-4be6-97f8-645980cb22e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1951870cd0>]}
+[0m18:32:05.462194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '81c10de1-2c11-4be6-97f8-645980cb22e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f194f745490>]}
+[0m18:32:05.464128 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:32:05.489750 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:32:05.714511 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:32:05.715947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '81c10de1-2c11-4be6-97f8-645980cb22e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1950672150>]}
+[0m18:32:07.834116 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.CLASS_TEST.CUSTOMER' which was not found
+[0m18:32:07.836158 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.1782007, "process_user_time": 6.128893, "process_kernel_time": 1.010767, "process_mem_max_rss": "205768", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m18:32:07.838042 [debug] [MainThread]: Command `dbt run` failed at 18:32:07.837771 after 4.18 seconds
+[0m18:32:07.839079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1952916d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f194eef5e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f19314c8250>]}
+[0m18:32:07.840259 [debug] [MainThread]: Flushing usage events
+[0m18:33:34.502475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a69605e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a699b4d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a699b4cd0>]}
+
+
+============================== 18:33:34.508401 | 130c3ac1-8ae3-4997-94af-d719fbb78ec5 ==============================
+[0m18:33:34.508401 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:33:34.509447 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:33:35.869001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '130c3ac1-8ae3-4997-94af-d719fbb78ec5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a47d1f2d0>]}
+[0m18:33:35.959566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '130c3ac1-8ae3-4997-94af-d719fbb78ec5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a69c85410>]}
+[0m18:33:35.960822 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:33:35.980944 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:33:36.167253 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:33:36.168146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '130c3ac1-8ae3-4997-94af-d719fbb78ec5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a6ada5f10>]}
+[0m18:33:38.620897 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.ORDERS' which was not found
+[0m18:33:38.622485 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 4.1970825, "process_user_time": 6.150537, "process_kernel_time": 1.079421, "process_mem_max_rss": "207992", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m18:33:38.623501 [debug] [MainThread]: Command `dbt run` failed at 18:33:38.623315 after 4.20 seconds
+[0m18:33:38.624188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a69635b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a6d016e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1a47b0b490>]}
+[0m18:33:38.624885 [debug] [MainThread]: Flushing usage events
+[0m18:34:20.929404 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a069fc3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a069fc250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a069fc090>]}
+
+
+============================== 18:34:20.933454 | 00193d6c-6c80-4fb3-9279-e5c66d3f9bb3 ==============================
+[0m18:34:20.933454 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:34:20.934872 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m18:34:20.954130 [info ] [MainThread]: dbt version: 1.8.1
+[0m18:34:20.956366 [info ] [MainThread]: python version: 3.11.5
+[0m18:34:20.958551 [info ] [MainThread]: python path: /home/vipin/Desktop/airflow-workflow-project-inclass/dbt/bin/python3
+[0m18:34:20.960061 [info ] [MainThread]: os info: Linux-5.14.0-362.18.1.el9_3.x86_64-x86_64-with-glibc2.34
+[0m18:34:22.059836 [info ] [MainThread]: Using profiles dir at /home/vipin/.dbt
+[0m18:34:22.060737 [info ] [MainThread]: Using profiles.yml file at /home/vipin/.dbt/profiles.yml
+[0m18:34:22.061536 [info ] [MainThread]: Using dbt_project.yml file at /home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/dbt_project.yml
+[0m18:34:22.062436 [info ] [MainThread]: adapter type: snowflake
+[0m18:34:22.063054 [info ] [MainThread]: adapter version: 1.8.2
+[0m18:34:22.245993 [info ] [MainThread]: Configuration:
+[0m18:34:22.246940 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:34:22.247796 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:34:22.248533 [info ] [MainThread]: Required dependencies:
+[0m18:34:22.249319 [debug] [MainThread]: Executing "git --help"
+[0m18:34:22.252717 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:34:22.253796 [debug] [MainThread]: STDERR: "b''"
+[0m18:34:22.254587 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:34:22.255434 [info ] [MainThread]: Connection:
+[0m18:34:22.256249 [info ] [MainThread]:   account: cbujvcv-uy79203
+[0m18:34:22.257016 [info ] [MainThread]:   user: VIPINTOMAR1205
+[0m18:34:22.257761 [info ] [MainThread]:   database: CLASS_TEST
+[0m18:34:22.258421 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m18:34:22.259047 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m18:34:22.259752 [info ] [MainThread]:   schema: CLASS_TEST
+[0m18:34:22.260780 [info ] [MainThread]:   authenticator: None
+[0m18:34:22.261679 [info ] [MainThread]:   oauth_client_id: None
+[0m18:34:22.262490 [info ] [MainThread]:   query_tag: None
+[0m18:34:22.263293 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:34:22.264080 [info ] [MainThread]:   host: None
+[0m18:34:22.265161 [info ] [MainThread]:   port: None
+[0m18:34:22.266404 [info ] [MainThread]:   proxy_host: None
+[0m18:34:22.267120 [info ] [MainThread]:   proxy_port: None
+[0m18:34:22.267823 [info ] [MainThread]:   protocol: None
+[0m18:34:22.268599 [info ] [MainThread]:   connect_retries: 1
+[0m18:34:22.269264 [info ] [MainThread]:   connect_timeout: None
+[0m18:34:22.270267 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:34:22.271536 [info ] [MainThread]:   retry_all: False
+[0m18:34:22.272776 [info ] [MainThread]:   insecure_mode: False
+[0m18:34:22.273856 [info ] [MainThread]:   reuse_connections: None
+[0m18:34:22.275985 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:34:22.282475 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:34:22.286196 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:34:22.288513 [debug] [MainThread]: On debug: select 1 as id
+[0m18:34:22.290212 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:34:24.089760 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m18:34:24.092404 [debug] [MainThread]: On debug: Close
+[0m18:34:24.556821 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:34:24.557567 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:34:24.558743 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.705548, "process_user_time": 3.689184, "process_kernel_time": 1.055088, "process_mem_max_rss": "205376", "process_out_blocks": "24", "process_in_blocks": "0"}
+[0m18:34:24.559596 [debug] [MainThread]: Command `dbt debug` succeeded at 18:34:24.559438 after 3.71 seconds
+[0m18:34:24.560230 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:34:24.560788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a0a416e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a06a3b6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59e9102910>]}
+[0m18:34:24.561384 [debug] [MainThread]: Flushing usage events
+[0m18:35:03.321373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970cf4de50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970d2f8e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970d2f9150>]}
+
+
+============================== 18:35:03.325677 | 9c46478f-0186-4826-a753-b86562b3aab3 ==============================
+[0m18:35:03.325677 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:35:03.326690 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:35:04.498239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9c46478f-0186-4826-a753-b86562b3aab3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970cf472d0>]}
+[0m18:35:04.613771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9c46478f-0186-4826-a753-b86562b3aab3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970d5cd190>]}
+[0m18:35:04.615120 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:35:04.638336 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:35:04.805193 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:35:04.806025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9c46478f-0186-4826-a753-b86562b3aab3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970e6fa1d0>]}
+[0m18:35:07.049030 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.ORDERS' which was not found
+[0m18:35:07.050659 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 3.8047123, "process_user_time": 5.948024, "process_kernel_time": 1.090382, "process_mem_max_rss": "208216", "process_out_blocks": "8", "command_success": false, "process_in_blocks": "0"}
+[0m18:35:07.051731 [debug] [MainThread]: Command `dbt run` failed at 18:35:07.051520 after 3.81 seconds
+[0m18:35:07.052511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f970d465d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9710a16e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f96eb6b3490>]}
+[0m18:35:07.053272 [debug] [MainThread]: Flushing usage events
+[0m18:37:44.341312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f396e4b0450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f396e4e2c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f396e4e0410>]}
+
+
+============================== 18:37:44.346131 | 50760f1b-3816-4da3-a723-a0a62ee7b3ca ==============================
+[0m18:37:44.346131 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:37:44.347319 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'version_check': 'True', 'profiles_dir': '/home/vipin/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:37:45.539271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3950af3a90>]}
+[0m18:37:45.627268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f396fb3bb90>]}
+[0m18:37:45.628619 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:37:45.646633 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:37:45.851541 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:37:45.852507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f396fcbe190>]}
+[0m18:37:48.265850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39509de8d0>]}
+[0m18:37:48.416901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f394351bf50>]}
+[0m18:37:48.417882 [info ] [MainThread]: Found 3 models, 4 data tests, 3 sources, 444 macros
+[0m18:37:48.418720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39435ff350>]}
+[0m18:37:48.421996 [info ] [MainThread]: 
+[0m18:37:48.423111 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:37:48.433158 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_CLASS_TEST'
+[0m18:37:48.481212 [debug] [ThreadPool]: Using snowflake connection "list_CLASS_TEST"
+[0m18:37:48.482183 [debug] [ThreadPool]: On list_CLASS_TEST: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "connection_name": "list_CLASS_TEST"} */
+show terse schemas in database CLASS_TEST
+    limit 10000
+[0m18:37:48.483131 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:37:49.942438 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m18:37:49.944967 [debug] [ThreadPool]: On list_CLASS_TEST: Close
+[0m18:37:50.320557 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_CLASS_TEST, now list_CLASS_TEST_CLASS_TEST)
+[0m18:37:50.333621 [debug] [ThreadPool]: Using snowflake connection "list_CLASS_TEST_CLASS_TEST"
+[0m18:37:50.334438 [debug] [ThreadPool]: On list_CLASS_TEST_CLASS_TEST: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "connection_name": "list_CLASS_TEST_CLASS_TEST"} */
+show objects in CLASS_TEST.CLASS_TEST limit 10000
+[0m18:37:50.335115 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:37:51.933703 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 2.0 seconds
+[0m18:37:51.936744 [debug] [ThreadPool]: On list_CLASS_TEST_CLASS_TEST: Close
+[0m18:37:52.329387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39509cb3d0>]}
+[0m18:37:52.330798 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:37:52.331680 [info ] [MainThread]: 
+[0m18:37:52.335235 [debug] [Thread-1 (]: Began running node model.elt_vipin.my_first_dbt_model
+[0m18:37:52.336385 [info ] [Thread-1 (]: 1 of 3 START sql table model CLASS_TEST.my_first_dbt_model ..................... [RUN]
+[0m18:37:52.337730 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_CLASS_TEST_CLASS_TEST, now model.elt_vipin.my_first_dbt_model)
+[0m18:37:52.339418 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.my_first_dbt_model
+[0m18:37:52.354789 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.my_first_dbt_model"
+[0m18:37:52.356398 [debug] [Thread-1 (]: Began executing node model.elt_vipin.my_first_dbt_model
+[0m18:37:52.419225 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.my_first_dbt_model"
+[0m18:37:52.421389 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.my_first_dbt_model"
+[0m18:37:52.422359 [debug] [Thread-1 (]: On model.elt_vipin.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.my_first_dbt_model"} */
+create or replace transient table CLASS_TEST.CLASS_TEST.my_first_dbt_model
+         as
+        (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+        );
+[0m18:37:52.423078 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:54.485704 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m18:37:54.517975 [debug] [Thread-1 (]: On model.elt_vipin.my_first_dbt_model: Close
+[0m18:37:55.070169 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3943702d90>]}
+[0m18:37:55.071980 [info ] [Thread-1 (]: 1 of 3 OK created sql table model CLASS_TEST.my_first_dbt_model ................ [[32mSUCCESS 1[0m in 2.73s]
+[0m18:37:55.073849 [debug] [Thread-1 (]: Finished running node model.elt_vipin.my_first_dbt_model
+[0m18:37:55.075174 [debug] [Thread-1 (]: Began running node model.elt_vipin.orders_with_customer
+[0m18:37:55.076868 [info ] [Thread-1 (]: 2 of 3 START sql table model CLASS_TEST.orders_with_customer ................... [RUN]
+[0m18:37:55.079055 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.elt_vipin.my_first_dbt_model, now model.elt_vipin.orders_with_customer)
+[0m18:37:55.080884 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.orders_with_customer
+[0m18:37:55.090901 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.orders_with_customer"
+[0m18:37:55.093443 [debug] [Thread-1 (]: Began executing node model.elt_vipin.orders_with_customer
+[0m18:37:55.106105 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.orders_with_customer"
+[0m18:37:55.110146 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.orders_with_customer"
+[0m18:37:55.112410 [debug] [Thread-1 (]: On model.elt_vipin.orders_with_customer: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.orders_with_customer"} */
+create or replace transient table CLASS_TEST.CLASS_TEST.orders_with_customer
+         as
+        (
+
+select 
+      o.order_id,
+      c.first_name,
+      c.last_name,
+      o.order_date,
+      o.total_amount
+FROM CLASS_TEST.CLASS_TEST.ORDERS o
+JOIN CLASS_TEST.CLASS_TEST.CUSTOMER c ON o.customer_id=c.customer_id
+        );
+[0m18:37:55.113775 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:57.054257 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m18:37:57.059837 [debug] [Thread-1 (]: On model.elt_vipin.orders_with_customer: Close
+[0m18:37:57.419235 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3950990790>]}
+[0m18:37:57.420469 [info ] [Thread-1 (]: 2 of 3 OK created sql table model CLASS_TEST.orders_with_customer .............. [[32mSUCCESS 1[0m in 2.34s]
+[0m18:37:57.421507 [debug] [Thread-1 (]: Finished running node model.elt_vipin.orders_with_customer
+[0m18:37:57.422223 [debug] [Thread-1 (]: Began running node model.elt_vipin.my_second_dbt_model
+[0m18:37:57.423082 [info ] [Thread-1 (]: 3 of 3 START sql view model CLASS_TEST.my_second_dbt_model ..................... [RUN]
+[0m18:37:57.423870 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.elt_vipin.orders_with_customer, now model.elt_vipin.my_second_dbt_model)
+[0m18:37:57.424497 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.my_second_dbt_model
+[0m18:37:57.430488 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.my_second_dbt_model"
+[0m18:37:57.431932 [debug] [Thread-1 (]: Began executing node model.elt_vipin.my_second_dbt_model
+[0m18:37:57.483758 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.my_second_dbt_model"
+[0m18:37:57.486220 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.my_second_dbt_model"
+[0m18:37:57.487858 [debug] [Thread-1 (]: On model.elt_vipin.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.my_second_dbt_model"} */
+create or replace   view CLASS_TEST.CLASS_TEST.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from CLASS_TEST.CLASS_TEST.my_first_dbt_model
+where id = 1
+  );
+[0m18:37:57.490041 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:37:58.725392 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m18:37:58.729248 [debug] [Thread-1 (]: On model.elt_vipin.my_second_dbt_model: Close
+[0m18:37:59.112029 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '50760f1b-3816-4da3-a723-a0a62ee7b3ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3950a249d0>]}
+[0m18:37:59.114182 [info ] [Thread-1 (]: 3 of 3 OK created sql view model CLASS_TEST.my_second_dbt_model ................ [[32mSUCCESS 1[0m in 1.69s]
+[0m18:37:59.116109 [debug] [Thread-1 (]: Finished running node model.elt_vipin.my_second_dbt_model
+[0m18:37:59.118729 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:37:59.119816 [debug] [MainThread]: Connection 'model.elt_vipin.my_second_dbt_model' was properly closed.
+[0m18:37:59.121004 [info ] [MainThread]: 
+[0m18:37:59.122278 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 10.70 seconds (10.70s).
+[0m18:37:59.125335 [debug] [MainThread]: Command end result
+[0m18:37:59.207902 [info ] [MainThread]: 
+[0m18:37:59.208876 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:37:59.209827 [info ] [MainThread]: 
+[0m18:37:59.210928 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m18:37:59.212487 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.954876, "process_user_time": 6.772519, "process_kernel_time": 1.031712, "process_mem_max_rss": "217992", "process_out_blocks": "2808", "process_in_blocks": "0"}
+[0m18:37:59.213504 [debug] [MainThread]: Command `dbt run` succeeded at 18:37:59.213303 after 14.96 seconds
+[0m18:37:59.214175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f396e861710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3972016e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3971f5d350>]}
+[0m18:37:59.215530 [debug] [MainThread]: Flushing usage events
+[0m18:41:22.720398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7113b785d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7113bb35d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7113bb3dd0>]}
+
+
+============================== 18:41:22.725057 | 2f00ab5e-00d0-4938-bcae-9ce4e4375b92 ==============================
+[0m18:41:22.725057 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:41:22.726222 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:41:23.923301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2f00ab5e-00d0-4938-bcae-9ce4e4375b92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70f2251690>]}
+[0m18:41:24.019550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2f00ab5e-00d0-4938-bcae-9ce4e4375b92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f71143f9350>]}
+[0m18:41:24.021402 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:41:24.045422 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:41:24.285897 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:41:24.287402 [debug] [MainThread]: Partial parsing: updated file: elt_vipin://models/sources.yml
+[0m18:41:24.725680 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.elt_vipin.orders_with_customer' (models/transformed/orders_with_customer.sql) depends on a source named 'CLASS_TEST.CUSTOMER' which was not found
+[0m18:41:24.727248 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.0917845, "process_user_time": 4.03765, "process_kernel_time": 1.176332, "process_mem_max_rss": "208560", "process_out_blocks": "8", "command_success": false, "process_in_blocks": "0"}
+[0m18:41:24.728344 [debug] [MainThread]: Command `dbt run` failed at 18:41:24.728109 after 2.09 seconds
+[0m18:41:24.729129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7117616e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7113ba9810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70f22d4cd0>]}
+[0m18:41:24.730041 [debug] [MainThread]: Flushing usage events
+[0m18:41:49.199395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0785e87d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0785e8b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0785e9350>]}
+
+
+============================== 18:41:49.204414 | 551c6cb0-e151-4f0c-8d95-feb7b9ad5d04 ==============================
+[0m18:41:49.204414 [info ] [MainThread]: Running with dbt=1.8.1
+[0m18:41:49.205633 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vipin/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/vipin/Desktop/airflow-workflow-project-inclass/elt_vipin/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:41:50.416738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff078624610>]}
+[0m18:41:50.512112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff078c6d310>]}
+[0m18:41:50.513581 [info ] [MainThread]: Registered adapter: snowflake=1.8.2
+[0m18:41:50.535274 [debug] [MainThread]: checksum: ebc509fb14e151ea268e89b60fd5abf912ed99129f87516462718fa2f14f4838, vars: {}, profile: , target: , version: 1.8.1
+[0m18:41:50.748028 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m18:41:50.749300 [debug] [MainThread]: Partial parsing: updated file: elt_vipin://models/sources.yml
+[0m18:41:50.750060 [debug] [MainThread]: Partial parsing: updated file: elt_vipin://models/transformed/orders_with_customer.sql
+[0m18:41:51.326142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff056ac1990>]}
+[0m18:41:51.493379 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff055809690>]}
+[0m18:41:51.494358 [info ] [MainThread]: Found 3 models, 4 data tests, 3 sources, 444 macros
+[0m18:41:51.495138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff05571ffd0>]}
+[0m18:41:51.498370 [info ] [MainThread]: 
+[0m18:41:51.499472 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:41:51.506945 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_CLASS_TEST'
+[0m18:41:51.535955 [debug] [ThreadPool]: Using snowflake connection "list_CLASS_TEST"
+[0m18:41:51.537218 [debug] [ThreadPool]: On list_CLASS_TEST: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "connection_name": "list_CLASS_TEST"} */
+show terse schemas in database CLASS_TEST
+    limit 10000
+[0m18:41:51.538450 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:41:53.160871 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 2.0 seconds
+[0m18:41:53.164379 [debug] [ThreadPool]: On list_CLASS_TEST: Close
+[0m18:41:53.579725 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_CLASS_TEST, now list_CLASS_TEST_CLASS_TEST)
+[0m18:41:53.594668 [debug] [ThreadPool]: Using snowflake connection "list_CLASS_TEST_CLASS_TEST"
+[0m18:41:53.595481 [debug] [ThreadPool]: On list_CLASS_TEST_CLASS_TEST: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "connection_name": "list_CLASS_TEST_CLASS_TEST"} */
+show objects in CLASS_TEST.CLASS_TEST limit 10000
+[0m18:41:53.596257 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:41:55.658126 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 2.0 seconds
+[0m18:41:55.662109 [debug] [ThreadPool]: On list_CLASS_TEST_CLASS_TEST: Close
+[0m18:41:56.283466 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0569e4790>]}
+[0m18:41:56.285006 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:41:56.286222 [info ] [MainThread]: 
+[0m18:41:56.289753 [debug] [Thread-1 (]: Began running node model.elt_vipin.my_first_dbt_model
+[0m18:41:56.290745 [info ] [Thread-1 (]: 1 of 3 START sql table model CLASS_TEST.my_first_dbt_model ..................... [RUN]
+[0m18:41:56.292118 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_CLASS_TEST_CLASS_TEST, now model.elt_vipin.my_first_dbt_model)
+[0m18:41:56.293017 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.my_first_dbt_model
+[0m18:41:56.307451 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.my_first_dbt_model"
+[0m18:41:56.309150 [debug] [Thread-1 (]: Began executing node model.elt_vipin.my_first_dbt_model
+[0m18:41:56.372451 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.my_first_dbt_model"
+[0m18:41:56.374417 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.my_first_dbt_model"
+[0m18:41:56.375330 [debug] [Thread-1 (]: On model.elt_vipin.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.my_first_dbt_model"} */
+create or replace transient table CLASS_TEST.CLASS_TEST.my_first_dbt_model
+         as
+        (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+        );
+[0m18:41:56.376266 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:41:59.247963 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m18:41:59.299083 [debug] [Thread-1 (]: On model.elt_vipin.my_first_dbt_model: Close
+[0m18:41:59.726184 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff076f70e90>]}
+[0m18:41:59.727761 [info ] [Thread-1 (]: 1 of 3 OK created sql table model CLASS_TEST.my_first_dbt_model ................ [[32mSUCCESS 1[0m in 3.43s]
+[0m18:41:59.729259 [debug] [Thread-1 (]: Finished running node model.elt_vipin.my_first_dbt_model
+[0m18:41:59.730362 [debug] [Thread-1 (]: Began running node model.elt_vipin.orders_with_customer
+[0m18:41:59.731917 [info ] [Thread-1 (]: 2 of 3 START sql table model CLASS_TEST.orders_with_customer ................... [RUN]
+[0m18:41:59.733493 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.elt_vipin.my_first_dbt_model, now model.elt_vipin.orders_with_customer)
+[0m18:41:59.734532 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.orders_with_customer
+[0m18:41:59.743107 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.orders_with_customer"
+[0m18:41:59.745835 [debug] [Thread-1 (]: Began executing node model.elt_vipin.orders_with_customer
+[0m18:41:59.758816 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.orders_with_customer"
+[0m18:41:59.761830 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.orders_with_customer"
+[0m18:41:59.764817 [debug] [Thread-1 (]: On model.elt_vipin.orders_with_customer: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.orders_with_customer"} */
+create or replace transient table CLASS_TEST.CLASS_TEST.orders_with_customer
+         as
+        (
+
+select 
+      o.order_id,
+      c.first_name,
+      c.last_name,
+      o.order_date,
+      o.total_amount
+FROM CLASS_TEST.CLASS_TEST.ORDERS o
+JOIN CLASS_TEST.CLASS_TEST.CUSTOMER c ON o.customer_id=c.customer_id
+        );
+[0m18:41:59.765863 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:01.148570 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m18:42:01.154280 [debug] [Thread-1 (]: On model.elt_vipin.orders_with_customer: Close
+[0m18:42:01.700867 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0569469d0>]}
+[0m18:42:01.702483 [info ] [Thread-1 (]: 2 of 3 OK created sql table model CLASS_TEST.orders_with_customer .............. [[32mSUCCESS 1[0m in 1.97s]
+[0m18:42:01.704134 [debug] [Thread-1 (]: Finished running node model.elt_vipin.orders_with_customer
+[0m18:42:01.705290 [debug] [Thread-1 (]: Began running node model.elt_vipin.my_second_dbt_model
+[0m18:42:01.706667 [info ] [Thread-1 (]: 3 of 3 START sql view model CLASS_TEST.my_second_dbt_model ..................... [RUN]
+[0m18:42:01.708155 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.elt_vipin.orders_with_customer, now model.elt_vipin.my_second_dbt_model)
+[0m18:42:01.709229 [debug] [Thread-1 (]: Began compiling node model.elt_vipin.my_second_dbt_model
+[0m18:42:01.715837 [debug] [Thread-1 (]: Writing injected SQL for node "model.elt_vipin.my_second_dbt_model"
+[0m18:42:01.717566 [debug] [Thread-1 (]: Began executing node model.elt_vipin.my_second_dbt_model
+[0m18:42:01.778408 [debug] [Thread-1 (]: Writing runtime sql for node "model.elt_vipin.my_second_dbt_model"
+[0m18:42:01.783105 [debug] [Thread-1 (]: Using snowflake connection "model.elt_vipin.my_second_dbt_model"
+[0m18:42:01.785141 [debug] [Thread-1 (]: On model.elt_vipin.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.8.1", "profile_name": "elt_vipin", "target_name": "dev", "node_id": "model.elt_vipin.my_second_dbt_model"} */
+create or replace   view CLASS_TEST.CLASS_TEST.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from CLASS_TEST.CLASS_TEST.my_first_dbt_model
+where id = 1
+  );
+[0m18:42:01.787810 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:03.066422 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m18:42:03.071122 [debug] [Thread-1 (]: On model.elt_vipin.my_second_dbt_model: Close
+[0m18:42:03.413351 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '551c6cb0-e151-4f0c-8d95-feb7b9ad5d04', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff054de8bd0>]}
+[0m18:42:03.414567 [info ] [Thread-1 (]: 3 of 3 OK created sql view model CLASS_TEST.my_second_dbt_model ................ [[32mSUCCESS 1[0m in 1.71s]
+[0m18:42:03.416159 [debug] [Thread-1 (]: Finished running node model.elt_vipin.my_second_dbt_model
+[0m18:42:03.418693 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:42:03.419717 [debug] [MainThread]: Connection 'model.elt_vipin.my_second_dbt_model' was properly closed.
+[0m18:42:03.420776 [info ] [MainThread]: 
+[0m18:42:03.421501 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 11.92 seconds (11.92s).
+[0m18:42:03.422965 [debug] [MainThread]: Command end result
+[0m18:42:03.478750 [info ] [MainThread]: 
+[0m18:42:03.479663 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:42:03.480344 [info ] [MainThread]: 
+[0m18:42:03.481098 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m18:42:03.483213 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.401277, "process_user_time": 5.252773, "process_kernel_time": 1.161235, "process_mem_max_rss": "216112", "process_out_blocks": "2832", "process_in_blocks": "0"}
+[0m18:42:03.485071 [debug] [MainThread]: Command `dbt run` succeeded at 18:42:03.484808 after 14.40 seconds
+[0m18:42:03.486221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff07c016e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff07bf5d410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff07c0b9890>]}
+[0m18:42:03.487890 [debug] [MainThread]: Flushing usage events
